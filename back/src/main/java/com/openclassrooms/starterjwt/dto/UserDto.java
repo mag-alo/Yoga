@@ -29,7 +29,7 @@ public class UserDto {
     @Size(max = 20)
     private String firstName;
 
-    @NonNull
+    //@NonNull (mis en com sinon erreur : "annotation incohérente avec type primitif boolean" / plutôt que modifier en Boolean)
     private boolean admin;
 
     @JsonIgnore

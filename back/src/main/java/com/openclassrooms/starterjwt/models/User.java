@@ -25,6 +25,14 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @ToString
 public class User {
+  public User(String email, String lastName, String firstName, String password, boolean admin) {
+    this.email = email;
+    this.lastName = lastName;
+    this.firstName = firstName;
+    this.password = password;
+    this.admin = admin;
+  }
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -48,7 +56,7 @@ public class User {
   @Size(max = 120)
   private String password;
 
-  @NonNull
+  //@NonNull (mis en com sinon erreur : "annotation incohérente avec type primitif boolean" / plutôt que modifier en Boolean)
   private boolean admin;
 
   @CreatedDate
